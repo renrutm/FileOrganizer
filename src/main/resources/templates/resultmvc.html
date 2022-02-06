@@ -19,132 +19,132 @@
     var nodes = [[${nodes}]];
 </script>
 
-<div id="container" class="list-group list-group-tree well">
+<div class="container list-group list-group-tree well">
+</div>
+<script type="text/javascript" th:src="@{/javascript/mainmvc.js}"></script>
+</body>
+</html>
 
-    <!--<a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
+<!--<a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
+    <i class="fa fa-chevron"></i>
+    <span class="badge">1</span>
+    Item 1
+</a>
+<div class="list-group collapse">
+    <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
         <i class="fa fa-chevron"></i>
-        <span class="badge">1</span>
-        Item 1
+        <span class="badge">3</span>
+        Item 1.1
     </a>
     <div class="list-group collapse">
-        <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
-            <i class="fa fa-chevron"></i>
-            <span class="badge">3</span>
-            Item 1.1
-        </a>
-        <div class="list-group collapse">
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.1.1</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.1.2</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.1.3</a>
-        </div>
-
-        <a class="list-group-item" data-toggle="collapse">
-            <i class="fa fa fa-chevron"></i>
-            <span class="badge">3</span>
-            Item 1.2
-        </a>
-        <div class="list-group collapse">
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.2.1</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.2.2</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.2.3</a>
-        </div>
-
-        <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
-            <i class="fa fa fa-chevron"></i>
-            <span class="badge">3</span>
-            Item 1.3
-        </a>
-        <div class="list-group collapse">
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.3.1</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.3.2</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.3.3</a>
-        </div>
-
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.1.1</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.1.2</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.1.3</a>
     </div>
 
     <a class="list-group-item" data-toggle="collapse">
         <i class="fa fa fa-chevron"></i>
-        <span class="badge">1</span>
-        Item 2
+        <span class="badge">3</span>
+        Item 1.2
     </a>
     <div class="list-group collapse">
-
-        <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
-            <i class="fa fa fa-chevron"></i>
-            <span class="badge">3</span>
-            Item 2.1
-        </a>
-        <div class="list-group collapse">
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.1.1</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.1.2</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.1.3</a>
-        </div>
-
-        <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
-            <i class="fa fa fa-chevron"></i>
-            <span class="badge">3</span>
-            Item 2.2
-        </a>
-        <div class="list-group collapse">
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.2.1</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.2.2</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.2.3</a>
-        </div>
-
-        <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
-            <i class="fa fa fa-chevron"></i>
-            <span class="badge">3</span>
-            Item 2.3
-        </a>
-        <div class="list-group collapse">
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.3.1</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.3.2</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.3.3</a>
-        </div>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.2.1</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.2.2</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.2.3</a>
     </div>
 
     <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
         <i class="fa fa fa-chevron"></i>
         <span class="badge">3</span>
-        Item 3
+        Item 1.3
     </a>
     <div class="list-group collapse">
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.3.1</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.3.2</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.3.3</a>
+    </div>
 
-        <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
-            <i class="fa fa fa-chevron"></i>
-            <span class="badge">3</span>
-            Item 3.1
-        </a>
-        <div class="list-group collapse">
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.1.1</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.1.2</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.1.3</a>
-        </div>
+</div>
 
-        <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
-            <i class="fa fa fa-chevron"></i>
-            <span class="badge">3</span>
-            Item 3.2
-        </a>
-        <div class="list-group collapse">
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.2.1</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.2.2</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.2.3</a>
-        </div>
+<a class="list-group-item" data-toggle="collapse">
+    <i class="fa fa fa-chevron"></i>
+    <span class="badge">1</span>
+    Item 2
+</a>
+<div class="list-group collapse">
 
-        <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
-            <i class="fa fa fa-chevron"></i>
-            <span class="badge">3</span>
-            Item 3.3
-        </a>
-        <div class="list-group collapse">
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.3.1</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.3.2</a>
-            <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.3.3</a>
-        </div>
--->
+    <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
+        <i class="fa fa fa-chevron"></i>
+        <span class="badge">3</span>
+        Item 2.1
+    </a>
+    <div class="list-group collapse">
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.1.1</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.1.2</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.1.3</a>
+    </div>
+
+    <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
+        <i class="fa fa fa-chevron"></i>
+        <span class="badge">3</span>
+        Item 2.2
+    </a>
+    <div class="list-group collapse">
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.2.1</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.2.2</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.2.3</a>
+    </div>
+
+    <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
+        <i class="fa fa fa-chevron"></i>
+        <span class="badge">3</span>
+        Item 2.3
+    </a>
+    <div class="list-group collapse">
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.3.1</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.3.2</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 2.3.3</a>
     </div>
 </div>
-<script type="text/javascript" th:src="@{/javascript/mainmvc.js}"></script>
-</body>
-</html>
+
+<a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
+    <i class="fa fa fa-chevron"></i>
+    <span class="badge">3</span>
+    Item 3
+</a>
+<div class="list-group collapse">
+
+    <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
+        <i class="fa fa fa-chevron"></i>
+        <span class="badge">3</span>
+        Item 3.1
+    </a>
+    <div class="list-group collapse">
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.1.1</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.1.2</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.1.3</a>
+    </div>
+
+    <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
+        <i class="fa fa fa-chevron"></i>
+        <span class="badge">3</span>
+        Item 3.2
+    </a>
+    <div class="list-group collapse">
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.2.1</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.2.2</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.2.3</a>
+    </div>
+
+    <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
+        <i class="fa fa fa-chevron"></i>
+        <span class="badge">3</span>
+        Item 3.3
+    </a>
+    <div class="list-group collapse">
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.3.1</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.3.2</a>
+        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 3.3.3</a>
+    </div>
+</div>
+-->

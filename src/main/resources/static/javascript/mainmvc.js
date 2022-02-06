@@ -1,7 +1,7 @@
 $(function() {
 // $(document).ready(function () {
 //     console.log("Got Here - static");
-    buildNodeTree(nodes)
+    buildNodeTree(this, nodes)
 
     //addToDOM(nodeTree)
 
@@ -15,7 +15,7 @@ $(function() {
     })
 });
 
-function buildNodeTree() {
+function buildNodeTree(dom) {
     //const rootNode = nodes.filter(findRootNode).pop()
     const nodeTree = {};
 
@@ -24,7 +24,7 @@ function buildNodeTree() {
 
     console.log("Test: " + nodeTree.toString());
 
-    buildHtmlTree(nodeTree);
+    buildHtmlTree(nodeTree.rootNode);
     //return nodeTree;
 }
 
@@ -47,7 +47,7 @@ function addNode(nodeValue) {
     if(nodeValue.parentId !== "") { //root
         obj.parentId = nodeValue.parentId
     } else {
-        this.nodes.root = obj;
+        this.rootNode = obj;
     }
 
     if(this[nodeValue.parentId] === undefined) { //parent doesn't exist yet
@@ -64,43 +64,82 @@ function findRootNode(nodeValue, index, arr) {
     return nodeValue.parentId === "";
 }
 
-function buildNodeTree(dom, node) {
-    // find root
+function buildHtmlTree(node) {
+
+    const rootWidget = $('div.container');
+    // const newWidget = test();
 
     if(node.children.length > 0) {
-        addNodeWithChildrenHtml(dom, node)
+        rootWidget.append(getNodeWithChildrenWidget(rootWidget, node));
     } else {
-        addChildlessNodeHtml(dom, node)
+        rootWidget.append(getChildlessNodeWidget(node));
     }
+
     /*
             if(children) // branch
-                addNodeWithChildrenHtml(rootDom, root)
+                getNodeWithChildrenWidget(rootDom, root)
 
             else // leaf
-               addChildlessNodeHtml(rootDom, root)
+               getChildlessNodeWidget(rootDom, root)
      */
 
 }
 
-function addNodeWithChildrenHtml(parentDom, node) {
+/*function test() {
+    const widget = $('<a/>', {
+        href: "javascript:void(0);",
+        class: "list-group-item",
+        "data-toggle": "collapse",
+        text: "test-filename"
+    });
 
-    parentDom.prepend(getParentContainerHtml(node));
-    for(const child in node.children) {
+    widget.append(
+        $("<i/>", {
+            class: "fa fa-chevron"
+        })
+    ).after(
+        $('<span/>', {
+            class: "badge",
+            text: "0"
+        })
+    );
+
+    widget.append(
+        $('<div/>', {
+            id: "test-node",
+            class: "list-group collapse"
+        })
+    );
+    return widget;
+}*/
+
+
+function getNodeWithChildrenWidget(outerDiv, node) {
+    outerDiv.append(getNodeLabelWidget(node));
+    let collapsibleDiv = getCollapsibleWidget(node);
+
+    for(const childIndex in node.children) {
+        let child = node.children[childIndex];
+
+        let childWidget = undefined;
         if(child.children.length > 0) {
-            addNodeWithChildrenHtml(parentDom, child)
+            // childWidget = getNodeWithChildrenWidget(collapsibleDiv, child);
+            getNodeWithChildrenWidget(collapsibleDiv, child);
         } else {
-            addChildlessNodeHtml(parentDom, child)
+            childWidget = getChildlessNodeWidget(child);
+            collapsibleDiv.append(childWidget)
         }
     }
 
-
+    outerDiv.append(collapsibleDiv);
+    // return newDiv;
     /*
         addparentHtml(node)
         loop through children
             if child has children
-                addNodeWithChildrenHtml(parent)
+                getNodeWithChildrenWidget(parent)
             else
-                addChildlessNodeHtml(parentDom, childnode)
+                getChildlessNodeWidget(parentDom, childnode)
     /*
     <a href="javascript:void(0);" class="list-group-item" data-toggle="collapse">
         <i class="fa fa-chevron"></i>
@@ -111,7 +150,35 @@ function addNodeWithChildrenHtml(parentDom, node) {
     </div>
      */
 }
-function getParentContainerHtml(node) {
+function getNodeLabelWidget(node) {
+    let widget = $('<a/>', {
+        href: "javascript:void(0);",
+        class: "list-group-item",
+        "data-toggle": "collapse"
+    });
+
+    widget.append(
+        $("<i/>", {
+            class: "fa fa-chevron"
+        })
+    );
+
+    widget.append(
+        $('<span/>', {
+            class: "badge",
+            text: "0"
+        })
+    )
+
+    // widget.append($("<b>" + node.data.fileName + "</b>"))
+    widget.append($('<text>', {
+        text: node.data.fileName
+    }))
+
+    // widget.text()
+
+    return widget;
+/*
     const html = "<a href=\"javascript:void(0);\" class=\"list-group-item\" data-toggle=\"collapse\">\n" +
         "        <i class=\"fa fa-chevron\"></i>\n" +
         "        <span class=\"badge\">1</span>\n" +
@@ -119,13 +186,50 @@ function getParentContainerHtml(node) {
         "    </a>\n" +
         "    <div id=\"${node.id}\" class=\"list-group collapse\">\n" +
         "    </div>"
-    return html;
+    return html;*/
 }
 
-function addChildlessNodeHtml(parentDom, node) {
-    const html = "<a href=\"javascript:void(0);\" class=\"list-group-item\"><span class=\"badge\">0</span>${node.fileName}</a>\n";
-    return html;
-    /*
-        <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.1.1</a>
-     */
+function getCollapsibleWidget(node) {
+    return $('<div/>', {
+            // id: ,
+            class: "list-group collapse"
+        });
 }
+
+function getChildlessNodeWidget(node) {
+    return $('<a/>', {
+        href: "javascript:void(0);",
+        class: "list-group-item"
+    }).append(
+        $("<i/>", {
+            class: "fa fa-file-o"
+        })
+    ).append(
+        $('<span/>', {
+            class: "badge",
+            text: "0"
+        })
+    ).append($('<text/>', {
+        text: node.data.fileName
+    }));
+}
+
+/*
+    <a href="javascript:void(0);" class="list-group-item"><span class="badge">0</span>Item 1.1.1</a>
+ */
+
+    /*
+    return $('<div/>', {
+                class : "sudoku-outer-grid-cell"
+            }
+        ).append(
+            $('<div/>', {
+                class : "sudoku-grid-container"
+            }).append(
+                $('<div/>', {
+                    id: key,
+                    class: "sudoku-grid"
+                })
+            )
+        );
+     */

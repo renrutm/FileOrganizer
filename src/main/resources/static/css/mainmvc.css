@@ -30,9 +30,15 @@ body {
     margin-right: 5px;
 }
 
+.fa-file-o:before {
+    /*content: "\f15b"; !*file*!*/
+    font-family: "FontAwesome";
+    content: "\f016"; /*file*/
+}
+
 .fa-chevron:before {
-    content: "\f114"; /*right*/
+    content: "\f114"; /*open*/
 }
 .in > .fa-chevron:before {
-    content: "\f115"; /*down*/
+    content: "\f115"; /*closed*/
 }
